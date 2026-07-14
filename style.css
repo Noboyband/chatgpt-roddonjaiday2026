@@ -186,7 +186,8 @@ button { font: inherit; }
 .stage-content {
   grid-template-columns: minmax(0, 1.25fr) minmax(310px, .55fr);
   gap: 5vw;
-  padding: 2vh 6vw 9vh;
+  padding: 2vh 6vw 4vh;
+  height: calc(100vh - 11vh);
 }
 
 .hero-copy {
@@ -225,6 +226,8 @@ button { font: inherit; }
 .scan-badge {
   color: #fff;
   background: #ff5a1f;
+  font-family: "Noto Sans Thai", sans-serif;
+  letter-spacing: 0;
 }
 
 .qr-frame {
