@@ -4,9 +4,15 @@ const progress = document.querySelector("#progress");
 const connection = document.querySelector("#connection");
 const burstLayer = document.querySelector("#burst-layer");
 const speedLevel = document.querySelector("#speed-level");
+const musicToggle = document.querySelector("#music-toggle");
 const maxHearts = 1000;
 let count = Math.min(maxHearts, Number(localStorage.getItem("roddonjai-heart-count")) || 0);
 let audioContext;
+let musicGain;
+let musicTimer;
+let musicStep = 0;
+let nextMusicBeat = 0;
+let musicEnabled = true;
 let recentTaps = [];
 let currentLevel = 1;
 const heartColors = ["#f47b20", "#1687d9", "#ef3340", "#f6c515"];
@@ -25,11 +31,20 @@ button.addEventListener("click", () => {
   count += 1;
   localStorage.setItem("roddonjai-heart-count", count);
   updateCount(count);
+  startBackgroundMusic();
   playHeartSound(count, currentLevel);
   button.classList.add("pressed");
   setTimeout(() => button.classList.remove("pressed"), 100);
   navigator.vibrate?.(18);
   burst();
+});
+
+musicToggle.addEventListener("click", () => {
+  musicEnabled = !musicEnabled;
+  musicToggle.classList.toggle("muted", !musicEnabled);
+  musicToggle.setAttribute("aria-pressed", String(musicEnabled));
+  if (musicEnabled) startBackgroundMusic();
+  else stopBackgroundMusic();
 });
 
 function updateSpeedLevel(level) {
@@ -48,6 +63,59 @@ function ensureAudio() {
   audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
   if (audioContext.state === "suspended") audioContext.resume();
   return audioContext;
+}
+
+function startBackgroundMusic() {
+  if (!musicEnabled || musicTimer) return;
+  const context = ensureAudio();
+  if (!musicGain) {
+    musicGain = context.createGain();
+    musicGain.gain.value = .11;
+    musicGain.connect(context.destination);
+  } else {
+    musicGain.gain.setTargetAtTime(.11, context.currentTime, .04);
+  }
+  nextMusicBeat = context.currentTime + .04;
+  musicTimer = setInterval(scheduleMusic, 80);
+  scheduleMusic();
+}
+
+function stopBackgroundMusic() {
+  clearInterval(musicTimer);
+  musicTimer = null;
+  if (musicGain && audioContext) musicGain.gain.setTargetAtTime(.001, audioContext.currentTime, .04);
+}
+
+function scheduleMusic() {
+  if (!musicEnabled || !audioContext || !musicGain) return;
+  const eighthNote = 60 / 132 / 2;
+  while (nextMusicBeat < audioContext.currentTime + .22) {
+    const step = musicStep % 16;
+    if (step % 4 === 0) musicNote(nextMusicBeat, 52, .14, .7, "sine", 120);
+    if (step % 2 === 0) {
+      const bass = [110, 110, 130.81, 146.83][Math.floor(step / 4) % 4];
+      musicNote(nextMusicBeat, bass, .18, .18, "triangle");
+    }
+    if ([0, 6, 10, 14].includes(step)) {
+      const lead = [440, 523.25, 659.25, 783.99][[0, 6, 10, 14].indexOf(step)];
+      musicNote(nextMusicBeat, lead, .09, .055, "square");
+    }
+    nextMusicBeat += eighthNote;
+    musicStep += 1;
+  }
+}
+
+function musicNote(at, frequency, duration, volume, type, startFrequency = frequency) {
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  oscillator.type = type;
+  oscillator.frequency.setValueAtTime(startFrequency, at);
+  if (startFrequency !== frequency) oscillator.frequency.exponentialRampToValueAtTime(frequency, at + duration * .7);
+  gain.gain.setValueAtTime(volume, at);
+  gain.gain.exponentialRampToValueAtTime(.001, at + duration);
+  oscillator.connect(gain).connect(musicGain);
+  oscillator.start(at);
+  oscillator.stop(at + duration + .01);
 }
 
 function tone(context, at, frequency, duration, volume) {
