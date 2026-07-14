@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#f6bf27">
+  <title>ส่งหัวใจ | Roddonjai Day 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="play-page">
+  <main class="play-shell">
+    <header class="play-header">
+      <div class="mini-brand"><span>R</span><strong>RODDONJAI<br>DAY 2026</strong></div>
+      <div id="connection" class="connection"><i></i> พร้อมเล่น</div>
+    </header>
+
+    <section class="play-content">
+      <p class="event-theme-line">TOGETHER, WE DRIVE QUALITY USED CARS FORWARD</p>
+      <p class="eyebrow">RODDONJAI DAY 2026</p>
+      <h1>แตะหัวใจ<br>ให้เต็มจอ!</h1>
+      <p>สะสมหัวใจพร้อมเสียงสนุกได้สูงสุด 1,000 ดวง</p>
+
+      <button id="heart-button" class="heart-button" aria-label="ส่งหัวใจ">
+        <span class="pulse-ring"></span>
+        <span class="heart-symbol">♥</span>
+        <span class="tap-label">แตะเพื่อส่ง</span>
+      </button>
+
+      <div id="speed-level" class="speed-level level-1" aria-live="polite">
+        <span class="speed-bars"><i></i><i></i><i></i><i></i></span>
+        <strong>จังหวะปกติ</strong>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-copy"><span>หัวใจของคุณ</span><strong><b id="count">0</b> / 1,000</strong></div>
+        <div class="progress-track"><span id="progress"></span></div>
+      </div>
+      <p id="status" class="status" aria-live="polite">หัวใจและเสียงเอฟเฟกต์จะแสดงบนมือถือของคุณเท่านั้น</p>
+    </section>
+  </main>
+  <div id="burst-layer" class="burst-layer" aria-hidden="true"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/play.js"></script>
+</body>
+</html>
