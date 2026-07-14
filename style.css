@@ -301,9 +301,24 @@ button { font: inherit; }
   width: min(100%, 430px);
   margin-left: auto;
   margin-right: auto;
-  font-size: clamp(25px, 7.2vw, 38px);
-  line-height: 1.22;
-  text-wrap: balance;
+  font-size: clamp(36px, 10.5vw, 52px);
+  line-height: 1.08;
+}
+
+.project-title {
+  width: min(100%, 440px);
+  margin: 11px auto 0;
+  color: #fff;
+  font-size: clamp(17px, 4.8vw, 24px);
+  line-height: 1.32;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .35);
+}
+
+.project-title span {
+  font-family: "Chakra Petch", "Noto Sans Thai", sans-serif;
+  font-size: 1.12em;
 }
 
 .play-content > p:not(.eyebrow):not(.status):not(.event-theme-line) {
@@ -342,7 +357,7 @@ button { font: inherit; }
 }
 
 @media (max-width: 560px) {
-  .play-content h1 { font-size: clamp(25px, 7.2vw, 34px); }
+  .play-content h1 { font-size: clamp(36px, 10.5vw, 46px); }
   .heart-button { width: min(48vw, 200px); }
   .speed-level { margin-top: 22px; }
   .mini-logo { width: 108px; }
