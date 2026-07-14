@@ -143,7 +143,7 @@ button { font: inherit; }
 }
 
 .stage-shell {
-  background-image: linear-gradient(90deg, rgba(5, 12, 66, .1), rgba(5, 12, 66, .34)), url("/assets/event-graphic.jpeg");
+  background-image: linear-gradient(90deg, rgba(5, 12, 66, .1), rgba(5, 12, 66, .34)), url("./assets/event-graphic.jpeg");
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -242,7 +242,7 @@ button { font: inherit; }
 
 .play-shell {
   color: #fff;
-  background-image: linear-gradient(180deg, rgba(2, 7, 38, .86), rgba(3, 9, 48, .97)), url("/assets/event-atmosphere.png");
+  background-image: linear-gradient(180deg, rgba(2, 7, 38, .86), rgba(3, 9, 48, .97)), url("./assets/event-atmosphere.png");
   background-size: cover;
   background-position: center;
 }

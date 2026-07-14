@@ -1,4 +1,3 @@
-const socket = io();
 const button = document.querySelector("#heart-button");
 const countNode = document.querySelector("#count");
 const progress = document.querySelector("#progress");
@@ -13,14 +12,8 @@ let recentTaps = [];
 let currentLevel = 1;
 const heartColors = ["#f47b20", "#1687d9", "#ef3340", "#f6c515"];
 
-socket.on("connect", () => {
-  connection.classList.remove("offline");
-  connection.lastChild.textContent = " พร้อมเล่น";
-});
-socket.on("disconnect", () => {
-  connection.classList.add("offline");
-  connection.lastChild.textContent = " เล่นบนเครื่องนี้";
-});
+connection.classList.remove("offline");
+connection.lastChild.textContent = " พร้อมเล่น";
 updateCount(count);
 
 button.addEventListener("click", () => {
