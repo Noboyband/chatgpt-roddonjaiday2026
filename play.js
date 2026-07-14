@@ -1,7 +1,6 @@
 const button = document.querySelector("#heart-button");
 const countNode = document.querySelector("#count");
 const progress = document.querySelector("#progress");
-const status = document.querySelector("#status");
 const connection = document.querySelector("#connection");
 const burstLayer = document.querySelector("#burst-layer");
 const speedLevel = document.querySelector("#speed-level");
@@ -126,7 +125,6 @@ function updateCount(value) {
   countNode.textContent = count.toLocaleString("th-TH");
   progress.style.width = `${Math.min(100, count / maxHearts * 100)}%`;
   button.disabled = count >= maxHearts;
-  status.textContent = count >= maxHearts ? "สุดยอด! คุณสะสมครบ 1,000 ดวงแล้ว" : "หัวใจและเสียงเอฟเฟกต์จะแสดงบนมือถือของคุณเท่านั้น";
 }
 
 function burst() {
