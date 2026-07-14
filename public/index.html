@@ -16,7 +16,10 @@
       <div class="brand-lockup">
         <div class="brand-mark"><img src="./assets/rdj-logo.svg" alt="Roddonjai Certified"></div>
       </div>
-      <div class="live-pill"><span></span> LIVE 2026</div>
+      <div class="stage-header-actions">
+        <button id="music-toggle" class="music-toggle" type="button" aria-label="เปิดหรือปิดเพลงพื้นหลัง" title="เพลงพื้นหลัง">♪</button>
+        <div class="live-pill"><span></span> LIVE 2026</div>
+      </div>
     </header>
 
     <section class="stage-content">
@@ -33,5 +36,7 @@
       </aside>
     </section>
   </main>
+  <audio id="background-music" src="./assets/event-background.wav" loop preload="metadata"></audio>
+  <script src="./background-audio.js"></script>
 </body>
 </html>

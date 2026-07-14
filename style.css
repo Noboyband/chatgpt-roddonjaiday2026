@@ -39,6 +39,7 @@ button { font: inherit; }
 }
 
 .stage-header { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 3.2vh 4vw; }
+.stage-header-actions { display: flex; align-items: center; gap: 18px; }
 .brand-lockup { display: flex; gap: 1.2vw; align-items: center; }
 .brand-mark, .mini-logo { display: grid; place-items: center; background: #fff; border-radius: 4px; }
 .brand-mark { width: clamp(180px, 13vw, 250px); padding: 8px 10px; }
