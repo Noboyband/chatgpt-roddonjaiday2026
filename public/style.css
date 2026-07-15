@@ -196,10 +196,12 @@ button { font: inherit; }
 
 .hero-copy {
   max-width: 980px;
+  transform: translateX(2.5vw);
 }
 
 .hero-copy h2 {
   font-size: clamp(40px, 4.3vw, 88px);
+  line-height: 1.18;
 }
 
 .hero-copy h2 strong {
@@ -225,6 +227,7 @@ button { font: inherit; }
   width: min(28vw, 500px);
   border-top-color: #ff6926;
   box-shadow: 20px 20px 0 rgba(255, 91, 31, .78), 34px 34px 0 rgba(4, 16, 81, .45);
+  transform: translateX(-4.5vw);
 }
 
 .scan-badge {
@@ -368,4 +371,105 @@ button { font: inherit; }
   .heart-button { width: min(48vw, 200px); }
   .speed-level { margin-top: 22px; }
   .mini-logo { width: 108px; }
+}
+
+@media (max-width: 780px) {
+  .stage-page {
+    overflow-y: auto;
+  }
+
+  .stage-shell {
+    height: auto;
+    min-height: 100svh;
+    overflow: hidden;
+    background-position: 38% center;
+  }
+
+  .stage-header {
+    padding: max(14px, env(safe-area-inset-top)) 16px 14px;
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: min(42vw, 170px);
+    min-width: 128px;
+    min-height: 0;
+    padding: 6px 8px;
+    box-shadow: 5px 5px 0 #ff9a20;
+  }
+
+  .stage-header-actions {
+    gap: 8px;
+  }
+
+  .stage-header .music-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .live-pill {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .live-pill span {
+    box-shadow: 0 0 0 4px rgba(239,79,95,.22);
+  }
+
+  .stage-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 38px;
+    padding: 34px 20px 64px;
+  }
+
+  .qr-panel {
+    order: 1;
+    width: min(84vw, 370px);
+    padding: 20px 14px 22px;
+    box-shadow: 12px 12px 0 rgba(255, 91, 31, .8), 22px 22px 0 rgba(4, 16, 81, .42);
+    transform: none;
+  }
+
+  .scan-badge {
+    margin-top: -40px;
+    font-size: 14px;
+  }
+
+  .qr-frame {
+    width: min(64vw, 270px);
+    padding: 8px;
+    margin: 16px auto 10px;
+  }
+
+  .qr-panel p {
+    font-size: 13px;
+  }
+
+  .hero-copy {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    transform: none;
+  }
+
+  .stage-content .eyebrow {
+    max-width: 350px;
+    margin: 0 auto 12px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .hero-copy h2 {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.18;
+  }
+
+  .supporting {
+    max-width: 340px;
+    margin: 18px auto 0;
+    font-size: 16px;
+    line-height: 1.55;
+  }
 }
