@@ -230,6 +230,16 @@ button { font: inherit; }
   transform: translateX(-4.5vw);
 }
 
+@media (min-width: 781px) {
+  .stage-header .brand-lockup {
+    transform: translateX(4vw);
+  }
+
+  .stage-header-actions {
+    transform: translateX(-4.5vw);
+  }
+}
+
 .scan-badge {
   color: #fff;
   background: #ff5a1f;
