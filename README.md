@@ -1,8 +1,4 @@
-# Roddonjai Day 2026 Live Hearts
-
 Current release: **Version 2.0.0** (`v2.0.0`)
-
-เว็บไซต์: https://noboyband.github.io/chatgpt-roddonjaiday2026/
 
 หน้าเว็บกิจกรรมสำหรับจอเวทีและมือถือผู้ร่วมงาน โดยหัวใจและเสียงเอฟเฟกต์เกิดเฉพาะบนมือถือแต่ละเครื่อง
 
