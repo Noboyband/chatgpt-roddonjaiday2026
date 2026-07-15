@@ -1,7 +1,7 @@
 const path = require("path");
 const QRCode = require("qrcode");
 
-const playUrl = "https://noboyband.github.io/chatgpt-roddonjaiday2026/play.html";
+const playUrl = "https://rdj.noboyband.com/play.html";
 const output = path.join(__dirname, "..", "public", "assets", "play-qr.png");
 
 QRCode.toFile(output, playUrl, {
