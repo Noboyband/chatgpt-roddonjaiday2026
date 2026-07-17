@@ -293,6 +293,21 @@ button { font: inherit; }
   backdrop-filter: blur(10px);
 }
 
+.play-header .music-toggle {
+  color: #fff;
+  border-color: rgba(17, 29, 101, .16);
+  background: #ff6524;
+  box-shadow: 0 3px 0 #c84413;
+}
+
+.play-header .music-toggle.muted {
+  color: #111d65;
+  border-color: rgba(17, 29, 101, .22);
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 3px 0 rgba(17, 29, 101, .16);
+  opacity: 1;
+}
+
 .connection {
   color: #111d65;
   background: rgba(22, 135, 217, .12);
