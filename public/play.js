@@ -129,13 +129,14 @@ function updateCount(value) {
 
 function burst() {
   const rect = button.getBoundingClientRect();
+  const burstColors = shuffledHeartColors();
   for (let i = 0; i < 9; i += 1) {
     const heart = document.createElement("span");
     const angle = (Math.PI * 2 * i / 7) - Math.PI / 2;
     const distance = 65 + Math.random() * 55;
     heart.className = "burst-heart";
     heart.textContent = "♥";
-    heart.style.color = heartColors[(count + i) % heartColors.length];
+    heart.style.color = burstColors[i % burstColors.length];
     heart.style.left = `${rect.left + rect.width / 2}px`;
     heart.style.top = `${rect.top + rect.height / 2}px`;
     heart.style.setProperty("--size", `${18 + Math.random() * 15}px`);
@@ -146,6 +147,7 @@ function burst() {
     heart.addEventListener("animationend", () => heart.remove());
   }
 
+  const floatingColors = shuffledHeartColors();
   for (let i = 0; i < 4; i += 1) {
     const floating = document.createElement("span");
     floating.className = "mobile-floating-heart";
@@ -155,8 +157,17 @@ function burst() {
     floating.style.setProperty("--float-x", `${-75 + Math.random() * 150}px`);
     floating.style.setProperty("--float-size", `${30 + Math.random() * 38}px`);
     floating.style.setProperty("--float-delay", `${i * .045}s`);
-    floating.style.color = heartColors[(count + i) % heartColors.length];
+    floating.style.color = floatingColors[i];
     burstLayer.append(floating);
     floating.addEventListener("animationend", () => floating.remove());
   }
+}
+
+function shuffledHeartColors() {
+  const colors = [...heartColors];
+  for (let i = colors.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [colors[i], colors[j]] = [colors[j], colors[i]];
+  }
+  return colors;
 }
