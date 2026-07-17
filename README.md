@@ -1,4 +1,4 @@
-Current release: **Version 2.0.0** (`v2.0.0`)
+Current release: **Version 3.0.0** (`v3.0.0`)
 
 หน้าเว็บกิจกรรมสำหรับจอเวทีและมือถือผู้ร่วมงาน โดยหัวใจและเสียงเอฟเฟกต์เกิดเฉพาะบนมือถือแต่ละเครื่อง
 
@@ -14,10 +14,10 @@ Current release: **Version 2.0.0** (`v2.0.0`)
 
 ## Rollback
 
-Version 2.0.0 is preserved by the Git tag `v2.0.0`. To restore it on a new branch:
+Version 3.0.0 is preserved by the Git tag `v3.0.0`. To restore it on a new branch:
 
 ```bash
-git switch -c rollback/v2.0.0 v2.0.0
+git switch -c rollback/v3.0.0 v3.0.0
 ```
 
-ตัวนับ 1,000 ดวงจะถูกจำแยกไว้ในมือถือแต่ละเครื่อง และไม่มีการส่งหัวใจไปยังจอเวที
+ตัวนับ 500 ดวงจะถูกจำแยกไว้ในมือถือแต่ละเครื่อง และไม่มีการส่งหัวใจไปยังจอเวที
