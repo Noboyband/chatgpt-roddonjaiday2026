@@ -4,7 +4,7 @@ const progress = document.querySelector("#progress");
 const connection = document.querySelector("#connection");
 const burstLayer = document.querySelector("#burst-layer");
 const speedLevel = document.querySelector("#speed-level");
-const maxHearts = 1000;
+const maxHearts = 500;
 let count = Math.min(maxHearts, Number(localStorage.getItem("roddonjai-heart-count")) || 0);
 let audioContext;
 let recentTaps = [];
