@@ -258,14 +258,14 @@ button { font: inherit; }
 }
 
 .play-page {
-  background: #071454;
+  background: #fff3ee;
 }
 
 .play-shell {
-  color: #fff;
-  background-image: linear-gradient(180deg, rgba(2, 7, 38, .86), rgba(3, 9, 48, .97)), url("./assets/event-atmosphere.png");
+  color: #111d65;
+  background-image: linear-gradient(180deg, rgba(255, 250, 247, .3), rgba(255, 239, 233, .52)), url("./assets/play-background-light.png");
   background-size: cover;
-  background-position: center;
+  background-position: 35% center;
 }
 
 .play-shell::before {
@@ -274,20 +274,20 @@ button { font: inherit; }
   bottom: 8vh;
   width: 260px;
   height: 260px;
-  border: 2px solid rgba(255, 178, 46, .5);
-  box-shadow: 0 0 0 22px rgba(255, 111, 35, .1), 0 0 0 44px rgba(255, 111, 35, .08), 0 0 0 66px rgba(255, 111, 35, .06);
+  border: 2px solid rgba(255, 101, 36, .2);
+  box-shadow: 0 0 0 22px rgba(255, 101, 36, .05), 0 0 0 44px rgba(22, 135, 217, .035), 0 0 0 66px rgba(255, 101, 36, .025);
 }
 
 .play-header {
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
-  background: rgba(4, 12, 59, .48);
+  border-bottom: 1px solid rgba(17, 29, 101, .12);
+  background: rgba(255, 255, 255, .68);
   backdrop-filter: blur(10px);
 }
 
 .connection {
-  color: #fff;
-  background: rgba(31, 135, 217, .35);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18);
+  color: #111d65;
+  background: rgba(22, 135, 217, .12);
+  box-shadow: inset 0 0 0 1px rgba(17, 29, 101, .12);
 }
 
 .play-content {
@@ -314,16 +314,33 @@ button { font: inherit; }
 }
 
 .play-content h1 {
-  color: #fff;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, .35);
+  color: #111d65;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, .8);
 }
 
 .play-content .collaboration-title {
   width: min(100%, 430px);
   margin-left: auto;
   margin-right: auto;
-  font-size: clamp(36px, 10.5vw, 52px);
-  line-height: 1.08;
+  font-size: clamp(31px, 8.8vw, 46px);
+  line-height: 1.15;
+}
+
+.collaboration-title > span,
+.collaboration-title > strong {
+  display: block;
+}
+
+.collaboration-title .collaboration-kicker {
+  margin-bottom: 12px;
+  color: #ffb12b;
+  font: 700 clamp(11px, 3vw, 14px)/1.35 "Chakra Petch", sans-serif;
+}
+
+.collaboration-title > strong {
+  margin-top: 5px;
+  color: #ffb12b;
+  font-weight: 800;
 }
 
 .project-title {
@@ -343,7 +360,7 @@ button { font: inherit; }
 }
 
 .play-content > p:not(.eyebrow):not(.status):not(.event-theme-line) {
-  color: rgba(255, 255, 255, .88);
+  color: rgba(17, 29, 101, .82);
 }
 
 .heart-button {
@@ -370,6 +387,9 @@ button { font: inherit; }
   width: auto;
   margin: 12px 0 0;
   color: #fff;
+  padding: 7px 18px;
+  border-radius: 4px;
+  background: #111d65;
   font-size: clamp(21px, 5.6vw, 26px);
   line-height: 1.2;
   text-shadow: 0 3px 8px rgba(0, 0, 0, .5);
@@ -388,9 +408,9 @@ button { font: inherit; }
 }
 
 .speed-level {
-  color: #fff;
-  background: rgba(22, 135, 217, .55);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+  color: #111d65;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: inset 0 0 0 1px rgba(17, 29, 101, .15);
   backdrop-filter: blur(8px);
 }
 
