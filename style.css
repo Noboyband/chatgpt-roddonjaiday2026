@@ -119,8 +119,8 @@ button { font: inherit; }
 .progress-track span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--teal), var(--mint), var(--yellow)); transition: width .25s; }
 .status { margin: 17px auto 0; max-width: 330px; color: rgba(18,50,57,.72); font-size: 12px; font-weight: 600; }
 .burst-layer { position: fixed; inset: 0; z-index: 5; pointer-events: none; overflow: hidden; }
-.burst-heart { position: absolute; color: var(--coral); font-size: var(--size); animation: burst .75s ease-out forwards; }
-.mobile-floating-heart { position: absolute; font-size: var(--float-size); line-height: 1; filter: drop-shadow(0 7px 8px rgba(18,50,57,.2)); animation: mobileFloat 1.6s var(--float-delay) cubic-bezier(.18,.68,.25,1) forwards; }
+.burst-heart { position: absolute; color: var(--coral); font-family: Arial, sans-serif; font-variant-emoji: text; font-size: var(--size); animation: burst .75s ease-out forwards; }
+.mobile-floating-heart { position: absolute; font-family: Arial, sans-serif; font-variant-emoji: text; font-size: var(--float-size); line-height: 1; filter: drop-shadow(0 7px 8px rgba(18,50,57,.2)); animation: mobileFloat 1.6s var(--float-delay) cubic-bezier(.18,.68,.25,1) forwards; }
 
 @keyframes floatUp { 0% { transform: translate(0,0) rotate(-10deg) scale(.5); opacity: 0; } 10% { opacity: 1; } 50% { transform: translate(var(--drift), -55vh) rotate(12deg) scale(1); } 100% { transform: translate(calc(var(--drift) * -.4), -118vh) rotate(-6deg) scale(.8); opacity: 0; } }
 @keyframes burst { to { transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(.2); opacity: 0; } }

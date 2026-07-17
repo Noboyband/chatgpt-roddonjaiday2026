@@ -135,7 +135,7 @@ function burst() {
     const angle = (Math.PI * 2 * i / 7) - Math.PI / 2;
     const distance = 65 + Math.random() * 55;
     heart.className = "burst-heart";
-    heart.textContent = "♥";
+    heart.textContent = "\u2665\uFE0E";
     heart.style.color = burstColors[i % burstColors.length];
     heart.style.left = `${rect.left + rect.width / 2}px`;
     heart.style.top = `${rect.top + rect.height / 2}px`;
@@ -151,7 +151,7 @@ function burst() {
   for (let i = 0; i < 4; i += 1) {
     const floating = document.createElement("span");
     floating.className = "mobile-floating-heart";
-    floating.textContent = "♥";
+    floating.textContent = "\u2665\uFE0E";
     floating.style.left = `${rect.left + rect.width * (.25 + Math.random() * .5)}px`;
     floating.style.top = `${rect.top + rect.height * .35}px`;
     floating.style.setProperty("--float-x", `${-75 + Math.random() * 150}px`);
