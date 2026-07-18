@@ -11,6 +11,9 @@
 html, body { margin: 0; min-height: 100%; }
 body { font-family: "Noto Sans Thai", sans-serif; color: var(--ink); }
 button { font: inherit; }
+.orange { color:#f16b34; padding-top:5px; }
+.blue { color:#010966}
+.light-blue { color:#0094ff; }
 
 .stage-page {
   min-height: 100vh;
@@ -183,7 +186,7 @@ button { font: inherit; }
 .brand-mark,
 .mini-logo {
   background: #fff;
-  box-shadow: 7px 7px 0 #ff9a20;
+  /* box-shadow: 7px 7px 0 #ff9a20; */
 }
 
 .event-label,
@@ -365,8 +368,8 @@ button { font: inherit; }
   width: min(100%, 430px);
   margin-left: auto;
   margin-right: auto;
-  font-size: clamp(31px, 8.8vw, 46px);
-  line-height: 1.15;
+  font-size: clamp(26px, 8.8vw, 26px);
+  line-height: 1.25;
 }
 
 .collaboration-title > span,
@@ -377,7 +380,7 @@ button { font: inherit; }
 .collaboration-title .collaboration-kicker {
   margin-bottom: 12px;
   color: #ffb12b;
-  font: 700 clamp(11px, 3vw, 14px)/1.35 "Chakra Petch", sans-serif;
+  font: 700 clamp(12px, 3vw, 14px)/1.35 "Chakra Petch", sans-serif;
 }
 
 .collaboration-title > strong {
