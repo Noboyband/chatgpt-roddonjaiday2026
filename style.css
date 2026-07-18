@@ -380,7 +380,7 @@ button { font: inherit; }
 .collaboration-title .collaboration-kicker {
   margin-bottom: 12px;
   color: #ffb12b;
-  font: 700 clamp(11px, 3vw, 14px)/1.35 "Chakra Petch", sans-serif;
+  font: 700 clamp(12px, 3vw, 14px)/1.35 "Chakra Petch", sans-serif;
 }
 
 .collaboration-title > strong {
