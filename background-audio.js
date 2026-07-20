@@ -1,7 +1,6 @@
 const backgroundMusic = document.querySelector("#background-music");
 const backgroundMusicToggle = document.querySelector("#music-toggle");
-const backgroundMusicPreferenceKey = "roddonjai-background-music-v2";
-let backgroundMusicEnabled = localStorage.getItem(backgroundMusicPreferenceKey) !== "off";
+let backgroundMusicEnabled = false;
 let backgroundFadeFrame;
 const backgroundMusicVolume = .16;
 
@@ -36,7 +35,6 @@ async function playBackgroundMusic() {
 
 backgroundMusicToggle.addEventListener("click", () => {
   backgroundMusicEnabled = !backgroundMusicEnabled;
-  localStorage.setItem(backgroundMusicPreferenceKey, backgroundMusicEnabled ? "on" : "off");
   syncBackgroundMusicButton();
   if (backgroundMusicEnabled) playBackgroundMusic();
   else {
@@ -44,7 +42,3 @@ backgroundMusicToggle.addEventListener("click", () => {
     backgroundMusic.pause();
   }
 });
-
-document.addEventListener("pointerdown", playBackgroundMusic, { passive: true });
-document.addEventListener("keydown", playBackgroundMusic);
-playBackgroundMusic();
