@@ -10,6 +10,7 @@ let audioContext;
 let recentTaps = [];
 let currentLevel = 1;
 const heartColors = ["#f16b34", "#010966", "#0094ff"];
+const heartImages = ["./assets/1.png", "./assets/2.png", "./assets/3.png"];
 
 connection.classList.remove("offline");
 connection.lastChild.textContent = " พร้อมเล่น";
@@ -147,17 +148,17 @@ function burst() {
     heart.addEventListener("animationend", () => heart.remove());
   }
 
-  const floatingColors = shuffledHeartColors();
+  const floatingImages = shuffledHeartImages();
   for (let i = 0; i < 4; i += 1) {
-    const floating = document.createElement("span");
+    const floating = document.createElement("img");
     floating.className = "mobile-floating-heart";
-    floating.textContent = "\u2665\uFE0E";
+    floating.src = floatingImages[i % floatingImages.length];
+    floating.alt = "";
     floating.style.left = `${rect.left + rect.width * (.25 + Math.random() * .5)}px`;
     floating.style.top = `${rect.top + rect.height * .35}px`;
     floating.style.setProperty("--float-x", `${-75 + Math.random() * 150}px`);
     floating.style.setProperty("--float-size", `${48 + Math.random() * 52}px`);
     floating.style.setProperty("--float-delay", `${i * .045}s`);
-    floating.style.color = floatingColors[i % floatingColors.length];
     burstLayer.append(floating);
     floating.addEventListener("animationend", () => floating.remove());
   }
@@ -170,4 +171,13 @@ function shuffledHeartColors() {
     [colors[i], colors[j]] = [colors[j], colors[i]];
   }
   return colors;
+}
+
+function shuffledHeartImages() {
+  const images = [...heartImages];
+  for (let i = images.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+  return images;
 }
