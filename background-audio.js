@@ -11,6 +11,9 @@ syncBackgroundMusicButton();
 function syncBackgroundMusicButton() {
   backgroundMusicToggle.classList.toggle("muted", !backgroundMusicEnabled);
   backgroundMusicToggle.setAttribute("aria-pressed", String(backgroundMusicEnabled));
+  const label = backgroundMusicEnabled ? "ปิดเสียงเพลง" : "เปิดเสียงเพลง";
+  backgroundMusicToggle.textContent = label;
+  backgroundMusicToggle.setAttribute("aria-label", label);
 }
 
 async function playBackgroundMusic() {

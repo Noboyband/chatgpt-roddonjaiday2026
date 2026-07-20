@@ -466,6 +466,57 @@ button { font: inherit; }
   backdrop-filter: blur(8px);
 }
 
+.play-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.play-controls .speed-level {
+  margin-top: 0;
+}
+
+.play-controls .music-text-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: auto;
+  min-width: 112px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(17, 29, 101, .16);
+  border-radius: 4px;
+  color: #fff;
+  background: #ff6524;
+  box-shadow: 0 3px 0 #c84413;
+  font: 700 12px/1 "Noto Sans Thai", sans-serif;
+  white-space: nowrap;
+}
+
+.play-controls .music-text-toggle::before {
+  content: "♪";
+  color: #010966;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.play-controls .music-text-toggle.muted {
+  color: #111d65;
+  border-color: rgba(17, 29, 101, .22);
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 3px 0 rgba(17, 29, 101, .16);
+  text-decoration: none;
+  opacity: 1;
+}
+
+.play-controls .music-text-toggle.muted::before {
+  text-decoration: line-through;
+}
+
 .progress-card {
   color: #111d65;
   border-top-color: #ff6524;
@@ -479,7 +530,7 @@ button { font: inherit; }
 @media (max-width: 560px) {
   .play-content h1 { font-size: clamp(36px, 10.5vw, 46px); }
   .heart-button { width: min(48vw, 200px); }
-  .speed-level { margin-top: 22px; }
+  .play-controls { margin-top: 22px; gap: 8px; }
   .mini-logo { width: 108px; }
 }
 
