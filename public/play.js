@@ -9,7 +9,7 @@ let count = Math.min(maxHearts, Number(localStorage.getItem("roddonjai-heart-cou
 let audioContext;
 let recentTaps = [];
 let currentLevel = 1;
-const heartColors = ["#f47b20", "#1687d9", "#ef3340", "#f6c515"];
+const heartColors = ["#f16b34", "#010966", "#0094ff"];
 
 connection.classList.remove("offline");
 connection.lastChild.textContent = " พร้อมเล่น";
@@ -155,9 +155,9 @@ function burst() {
     floating.style.left = `${rect.left + rect.width * (.25 + Math.random() * .5)}px`;
     floating.style.top = `${rect.top + rect.height * .35}px`;
     floating.style.setProperty("--float-x", `${-75 + Math.random() * 150}px`);
-    floating.style.setProperty("--float-size", `${30 + Math.random() * 38}px`);
+    floating.style.setProperty("--float-size", `${48 + Math.random() * 52}px`);
     floating.style.setProperty("--float-delay", `${i * .045}s`);
-    floating.style.color = floatingColors[i];
+    floating.style.color = floatingColors[i % floatingColors.length];
     burstLayer.append(floating);
     floating.addEventListener("animationend", () => floating.remove());
   }
